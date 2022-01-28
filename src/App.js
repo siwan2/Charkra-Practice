@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MyTranxPg from "./pages/my_tranx";
+import LoginPg from "./pages/login";
+import Home from "./pages/home.js";
+import AllTranxPg from "./pages/all_tranx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<LoginPg />} />
+        <Route path="/MyTranx" element={<MyTranxPg />} />
+        <Route path="/AllTranx" element={<AllTranxPg />} />
+      </Routes>
+    </Router>
   );
 }
 
